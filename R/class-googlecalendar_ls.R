@@ -1,8 +1,9 @@
 as.googlecalendar_ls <- function(x) UseMethod("as.googlecalendar_ls", x)
 
+# NEW - replacing deprecated functions
 as.googlecalendar_ls.data.frame <- function(x) {
-
-  structure(dplyr::tbl_df(data.frame(
+  
+  structure(tibble::as_tibble(data.frame(
     etag = x$etag,
     id = x$id,
     summary = x$summary,
