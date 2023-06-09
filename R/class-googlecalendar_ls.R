@@ -22,12 +22,5 @@ as.googlecalendar_ls.data.frame <- function(x) {
     stringsAsFactors = FALSE
   )),
   class = c("googlecalendar_ls", "tbl_df", "tbl", "data.frame"))
-
-}
-
-#' @export
-print.googlecalendar_ls <- function(x, ...) {
-  x %>%
-    dplyr::mutate_each(dplyr::funs_(~ truncate_col(.))) %>%
-    print()
+  
 }
